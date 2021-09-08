@@ -1,0 +1,69 @@
+
+    <div style="max-width: 1750px;height: 624px;background-image:url(https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80); background-size: cover;
+
+  background-repeat: no-repeat; background-attachment:fixed">
+   <div class="container">
+    <table class="center"class= table-border:1% table-responsive>
+   <tr> <td><h3 class="lob"style="text-align: center;" ></h3></td></tr>
+<h5 class="ss" style="text-align: center;">Congratulations!!<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find your ticket details below</h5>
+
+    <tr>
+      <th> Ticket Number</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.ticketNumber}}</B></td>
+    </tr>
+    <tr>
+      <th>Passenger's Name</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.customerName}}</B></td>
+    </tr>
+    <tr>
+      <th>Passenger's Mobile Number</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.mobileNumber}}</B></td>
+    </tr>
+    <tr>
+      <th>Bus Number</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.busNumber}}</B></td>
+    </tr>
+    <tr>
+      <th>Bus Name</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.busName}}</B></td>
+    </tr>
+    <tr>
+      <th>Source</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.fromCity}}</B></td>
+    </tr>
+    <tr>
+      <th>Destination</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.toCity}}</B></td>
+    </tr>
+    <tr>
+      <th>Date Of Travel</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.dateOfTravel}}</B></td>
+    </tr>
+    <tr>
+      <th>Class Type</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.travelClass}}</B></td>
+    </tr>
+    <tr>
+      <th>No of Passengers</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.noOfTickets}}</B></td>
+    </tr>
+    <tr>
+      <th>Departure Time</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.departure}}</B></td>
+    </tr>
+    <tr>
+      <th>Arrival Time</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.arrival}}</B></td>
+    </tr>
+    <tr>
+      <th>Total Ammount</th>
+      <td *ngFor="let booking of bookings"><B>{{booking.totalfareAmount}}</B></td>
+    </tr>
+    <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-success" (click)="home()">close</button></td></tr>
+</table>
+</div>
+<small  class="float-right btextual"[routerLink]="['/home']"></small>
+</div>

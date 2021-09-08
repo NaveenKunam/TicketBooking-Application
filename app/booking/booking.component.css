@@ -1,0 +1,31 @@
+.lob {
+    display: flex;
+    justify-content: center;
+    float:inline-start;
+    
+    color:slateblue;
+    tab-size: 1px;
+    table-layout: auto;
+    text-align: center;
+  
+}
+.ss{
+    color: black;
+    text-align: center;
+    
+}
+  .container {
+    display: flex;
+    color:snow;
+    justify-content: center;
+    float:inline-start;
+    height: 600px;
+    width: 500px;
+    
+  }
+  .center {
+      color:white;
+    text-align: right;
+    height: 500px;
+    width: 300px;
+  }
