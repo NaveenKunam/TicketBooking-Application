@@ -1,0 +1,142 @@
+
+  <div class="container" style="max-width: 1700px;height: 625px;background-image:url(https://trumpwallpapers.com/wp-content/uploads/Bus-Wallpaper-01-1600x900-1.jpg); 
+ background-repeat: no-repeat; background-attachment: fixed;
+background-size: 100% 100%; text-align:center">
+<div class="lob "style="text-align:left; border: aquamarine;background-color:aquarium ;table-align:center; tabindex: 2px;">
+  
+<form #submit='ngForm' class="form-horizontal" role="form" #f="ngForm" validate>
+  
+  <div class="lob" >
+    
+    <table>
+      <div class="color">
+<h1 id="heading" style="text-align: center;">Enter Details</h1>
+</div>
+      <tr><td> <h2 style="align-self: center;" class="container" ></h2><br></td></tr><tr></tr>
+<table class= table-border:1% table-responsive>
+ <tr><td> <h2 class="textual"></h2><br></td></tr><tr>
+  
+ <th>Name</th>
+  <td><input type="customerName" [(ngModel)]="user.customerName" 
+  [ngClass]="{'invalid-data': customerName.invalid && f.submitted, 'valid-data': customerName.valid && f.submitted}" required 
+  required name="customerName" #customerName="ngModel" placeholder="Passenger Name" class="form-control"></td>
+        <div *ngIf="customerName.invalid && f.submitted">
+   
+            <span style="color: red; border: none;" class="form-control">Passenger Name is required</span>
+          
+          </div>   
+
+ 
+</tr>
+
+<tr>
+  <th>Mobile Number</th>
+ <td> <input  type="mobileNumber" [(ngModel)]="user.mobileNumber" 
+  [ngClass]="{'invalid-data': mobileNumber.invalid && f.submitted, 'valid-data': mobileNumber.valid && f.submitted}" required  required minlength="10" pattern="[7-9]{1}[0-9]{9}"
+  required name="mobileNumber" #mobileNumber="ngModel" placeholder="Mobile Number" class="form-control"
+        ></td>
+        <span *ngIf="mobileNumber.invalid && f.submitted">
+   
+            <span style="color: red; border: none;" class="form-control">Passenger Mobile Number is required</span>
+          
+          </span>  
+                
+          <span *ngIf="mobileNumber.errors?.minlength" style="color: red;">
+            Phone Number must be 10 digits.
+          </span>
+          <span *ngIf="mobileNumber.errors?.pattern" style="color: red;">
+              Phone Number must be starting with 7/8/9.
+            </span>
+</tr>
+
+
+
+<tr>
+  <th>From City </th>
+ 
+   <td> <select class="form-control" name="fromCity" [(ngModel)]="user.fromCity" id="fromcity" data-toggle="tooltip"   
+    data-placement="right" title="Select From City"
+    [ngClass]="{'invalid-data': fromCity.invalid && f.submitted, 'valid-data': fromCity.valid && f.submitted}" required 
+  required name="fromCity" #fromCity="ngModel" placeholder="Enter fromCity " class="form-control">
+      
+    <option value="null">--Select City--</option>  
+        <option value="Chennai">Chennai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Pune">Pune</option>
+        </select></td>
+        <div *ngIf="fromCity.invalid && f.submitted">
+   
+          <span style="color: red; border: none;" class="form-control">From city is required</span>
+        
+        </div>
+ 
+</tr>
+
+<tr>
+  <th>To City </th>
+ 
+  <td><select class="form-control" name="toCity" [(ngModel)]="user.toCity" id="tocity" data-toggle="tooltip"   
+  data-placement="right" title="Select To City"
+  [ngClass]="{'invalid-data': toCity.invalid && f.submitted, 'valid-data': toCity.valid && f.submitted}" required 
+  required name="toCity" #toCity="ngModel" placeholder="Enter toCity " class="form-control"
+        >
+  <option value="null">--Select City--</option>  
+      <option value="Chennai">Chennai</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Pune">Pune</option>
+      </select></td>
+      <div *ngIf="toCity.invalid && f.submitted">
+   
+        <span style="color: red; border: none;" class="form-control">To city is required</span>
+      
+      </div>
+
+</tr>
+
+<tr>
+  <th>Travel Class </th>
+ 
+       <td> <select class="form-control" name="travelClass" [(ngModel)]="user.travelClass" id="travelClass" data-toggle="tooltip"   
+        data-placement="right" title="Class Type"
+        [ngClass]="{'invalid-data': travelClass.invalid && f.submitted, 'valid-data': travelClass.valid && f.submitted}" required 
+  required name="travelClass" #travelClass="ngModel" placeholder="Enter travelClass " class="form-control"
+        >>
+        <option value="null">--Select Class--</option>  
+            <option value="AC Push Back (1A)">AC Push BAck (1A)</option>
+            <option value="AC Semi Sleeper (2A)">AC Semi Sleeper (2A)</option>
+            <option value="AC Ordinary (3A">AC Ordinary Tier (3A)</option>
+            <option value="Sleeper (SL)">Sleeper (SL)</option>
+            <option value="Ordinary (2S)">Ordinary (2S)</option>
+            </select></td>
+            <div *ngIf="travelClass.invalid && f.submitted">
+   
+              <span style="color: red; border: none;" class="form-control">Class type is required</span>
+            
+            </div>
+  
+</tr>
+
+
+ <tr><th> <label for="noOfTickets">Number of Tickets </label></th>
+ <td><input  type="noOfTickets" [(ngModel)]="user.noOfTickets" 
+  [ngClass]="{'invalid-data': noOfTickets.invalid && f.submitted, 'valid-data': noOfTickets.valid && f.submitted}" required 
+  required name="noOfTickets" #noOfTickets="ngModel" placeholder="No of Tickets" class="form-control"
+        ></td>
+        <div *ngIf="noOfTickets.invalid && f.submitted">
+   
+            <span style="color: red; border: none;" class="form-control">No of tickets is required</span>
+          
+          </div>   
+</tr>
+<tr><th> </th>
+<td><button [disabled]="submit.form.invalid" class="btn btn-success" (click)="createBooking()">Book</button> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<button class="btn btn-success" type="reset">Clear</button></td>
+</tr>
+</table>

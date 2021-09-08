@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  .center {
+    width: 800px;
+  }
+
+  .container {
+
+    display: flex;
+
+    justify-content: center;
+
+    float:inline-start;
+    color:#000000;
+  }
+
+  .center {
+
+    width: 800px;
+
+  }
+  .color {
+    color:#000000;
+  }
